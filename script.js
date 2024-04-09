@@ -33,4 +33,25 @@ document.addEventListener('DOMContentLoaded', function() {
   function randomIndex() {
     return Math.floor(Math.random() * musicNotes.length);
   }
+
+  const timeBtn = document.querySelector('#generate-btn-timed');
+  timeBtn.onclick = disWithTime;
+  
+  const timeInSecs = document.querySelector('#time-in');
+  // document.addEventListener('input', updateTime })
+  // TODO: listener for change in input
+
+  let intervalId;
+  let currPrinting = false;
+  function disWithTime() {
+    if (currPrinting) {
+      clearInterval(intervalId);
+      timeBtn.innerText = 'Generate Every: ';
+    } else {
+      intervalId = setInterval(outputNote, (timeInSecs.value * 1000));
+      outputNote();
+      timeBtn.innerText = 'Stop';
+    }
+    currPrinting = !currPrinting;
+  }
 })
