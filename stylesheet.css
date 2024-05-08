@@ -1,3 +1,7 @@
+html {
+  font-size: 62.5%;
+}
+
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
@@ -9,38 +13,43 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 93vh;
+  width: 100%;
 }
 
 section {
+  width: 33%;
   background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+  padding: 2rem;
   text-align: center;
 }
 
-h1 {
+#header {
+  font-size: 2.5rem;
   color: #333;
+  margin-top: 1rem;
 }
 
-p {
+#description {
+  font-size: 1.5rem;
   color: #616060;
 }
 
 #output {
   color: #333;
-  font-size: 24px;
-  margin-top: 20px;
-  padding-bottom: .8em;
+  font-size: 3rem;
+  margin-top: 1.2rem;
+  padding-bottom: 1.3rem;
 }
 
 .btn {
   background-color: #007bff;
   color: #fff;
   border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
+  border-radius: 0.5rem;
+  padding: 1rem 2rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -50,6 +59,26 @@ p {
 }
 
 #time-in {
-  border-radius: 4px;
-  padding: 8px 17px;
+  width: 25%;
+  border-radius: 0.4rem;
+  padding: 0.8rem 1.7rem;
+}
+
+@media screen and (max-width: 1115px) {
+  #time-in {
+    margin-top: 0.6rem;
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 714px) {
+  #generate-btn-timed {
+    margin-top: 0.6rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #time-in::placeholder {
+    color: transparent;
+  }
 }
